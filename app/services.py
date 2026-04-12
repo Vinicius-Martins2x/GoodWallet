@@ -23,3 +23,22 @@ def listar_gastos():
 def calcular_total():
     gastos = ler_gastos()
     return sum(gasto["valor"] for gasto in gastos)
+
+def filtrar_por_categoria(categoria):
+    gastos = ler_gastos()
+    return [
+        gasto for gasto in gastos
+        if gasto["categoria"].lower() == categoria.lower()
+    ]
+
+def remover_gasto(id_gasto):
+    gastos = ler_gastos()
+
+    gastos_filtrados = [gasto for gasto in gastos if gasto["id"] != id_gasto]
+
+    if len(gastos) == len(gastos_filtrados):
+        return False
+
+    salvar_gastos(gastos_filtrados)
+    return True
+    
