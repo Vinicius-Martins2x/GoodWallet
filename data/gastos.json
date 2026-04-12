@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "valor": 50.0,
+        "categoria": "alimentação",
+        "descricao": "lanche",
+        "data": "2026-04-11"
+    },
+    {
+        "id": 2,
+        "valor": 100.0,
+        "categoria": "alimentação",
+        "descricao": "almoço",
+        "data": "2026-04-11"
+    }
+]
