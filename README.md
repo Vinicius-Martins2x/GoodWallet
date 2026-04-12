@@ -55,5 +55,6 @@ Demonstração:
 
 ### Gráfico por categoria
 ![Gráfico por categoria](assets/gastos-por-categoria.png)
+
 Autor:
 Vinícius Martins
