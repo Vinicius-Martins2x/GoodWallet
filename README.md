@@ -65,7 +65,6 @@ Como executar o projeto:
 
 Para executar os testes do projeto:
 
-```bash
 python -m pytest
 
 Demonstração:
