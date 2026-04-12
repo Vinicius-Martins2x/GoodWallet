@@ -2,7 +2,7 @@
 
 Gerenciador de gastos pessoais em Python.
 
-## Problema
+## Problema:
 
 Muitas pessoas têm dificuldade em controlar seus gastos mensais de forma simples e organizada. 
 Sem um controle adequado, é comum ultrapassar o orçamento e perder a noção de onde o dinheiro está sendo gasto.
