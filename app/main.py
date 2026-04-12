@@ -1,28 +1,15 @@
 from app.services import adicionar_gasto, listar_gastos, calcular_total, remover_gasto
 from app.storage import inicializar_arquivo
 
+
 def exibir_menu():
     print("\n=== GOODWALLET ===")
     print("1. Adicionar gasto")
     print("2. Listar gastos")
     print("3. Mostrar total gasto")
     print("4. Remover gasto")
-    elif opcao == "4":
-    try:
-        id_gasto = int(input("Digite o ID do gasto que deseja remover: "))
-        removido = remover_gasto(id_gasto)
-
-        if removido:
-            print("Gasto removido com sucesso.")
-        else:
-            print("ID não encontrado.")
-
-    except ValueError:
-        print("Digite um ID válido.")
     print("5. Sair")
-    elif opcao == "5":
-    print("Encerrando o GoodWallet.")
-    break
+
 
 def main():
     inicializar_arquivo()
@@ -69,6 +56,19 @@ def main():
             print(f"Total gasto: R$ {total:.2f}")
 
         elif opcao == "4":
+            try:
+                id_gasto = int(input("Digite o ID do gasto que deseja remover: "))
+                removido = remover_gasto(id_gasto)
+
+                if removido:
+                    print("Gasto removido com sucesso.")
+                else:
+                    print("ID não encontrado.")
+
+            except ValueError:
+                print("Digite um ID válido.")
+
+        elif opcao == "5":
             print("Encerrando o GoodWallet.")
             break
 
