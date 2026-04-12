@@ -35,4 +35,21 @@ def remover_gasto(id_gasto):
         return False
 
     salvar_gastos(gastos_filtrados)
-    return True   
+    return True
+
+def editar_gasto(id_gasto, novo_valor, nova_categoria, nova_descricao, nova_data):
+    gastos = ler_gastos()
+
+    for gasto in gastos:
+        if gasto["id"] == id_gasto:
+            gasto["valor"] = novo_valor
+            gasto["categoria"] = nova_categoria
+            gasto["descricao"] = nova_descricao
+            gasto["data"] = nova_data
+
+            salvar_gastos(gastos)
+            return True
+
+    return False
+
+   

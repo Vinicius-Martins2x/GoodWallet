@@ -12,5 +12,12 @@
         "categoria": "alimentação",
         "descricao": "almoço",
         "data": "2026-04-11"
+    },
+    {
+        "id": 3,
+        "valor": 950.0,
+        "categoria": "aluguel",
+        "descricao": "aluguel da residência",
+        "data": "2026-03-10"
     }
 ]
