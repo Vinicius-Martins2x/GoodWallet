@@ -1,17 +1,16 @@
 from app.services import (
     adicionar_gasto,
-    listar_gastos,
     calcular_total,
-    remover_gasto,
+    definir_limite_mensal,
     editar_gasto,
     filtrar_por_categoria,
     filtrar_por_mes,
-    definir_limite_mensal,
+    grafico_por_categoria,
+    listar_gastos,
     obter_limite_mensal,
+    remover_gasto,
     total_do_mes,
-    grafico_por_categoria
 )
-
 from app.storage import inicializar_arquivo
 
 

@@ -1,16 +1,16 @@
-from app.storage import salvar_gastos, salvar_config
 from app.services import (
     adicionar_gasto,
-    listar_gastos,
     calcular_total,
-    remover_gasto,
+    definir_limite_mensal,
     editar_gasto,
     filtrar_por_categoria,
     filtrar_por_mes,
-    definir_limite_mensal,
+    listar_gastos,
     obter_limite_mensal,
-    total_do_mes
+    remover_gasto,
+    total_do_mes,
 )
+from app.storage import salvar_config, salvar_gastos
 
 
 def setup_function():

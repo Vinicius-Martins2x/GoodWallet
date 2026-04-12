@@ -1,10 +1,6 @@
-from app.storage import (
-    ler_gastos,
-    salvar_gastos,
-    ler_config,
-    salvar_config
-)
 import matplotlib.pyplot as plt
+
+from app.storage import ler_config, ler_gastos, salvar_config, salvar_gastos
 
 
 def adicionar_gasto(valor, categoria, descricao, data):
