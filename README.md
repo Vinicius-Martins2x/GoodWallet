@@ -51,10 +51,10 @@ Demonstração:
 ![Menu principal](assets/menu.png)
 
 ### Lista de gastos
-![Lista de gastos](assets/listar_gastos.png)
+![Lista de gastos](assets/listar-gastos.png)
 
 ### Gráfico por categoria
-![Gráfico por categoria](assets/gastos-por-categoria.png)
+![Gráfico por categoria](assets/gastos-categoria.png)
 
 Autor:
 Vinícius Martins
