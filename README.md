@@ -1,5 +1,7 @@
-# GoodWallet
+GoodWallet
 Gerenciador de gastos pessoais em Python.
+Descrição:
+Aplicação em Python para gerenciamento de gastos pessoais, permitindo cadastrar, editar, remover, filtrar e visualizar despesas de forma simples.
 
 Funcionalidades:
 - Cadastro de gastos
@@ -11,6 +13,11 @@ Funcionalidades:
 - Filtro por mês
 - Definição de limite mensal
 - Gráfico de gastos por categoria
+- Adicionar gastos
+- Listar gastos
+- Editar gastos
+- Remover gastos
+- Verificar limite mensal
 
 Tecnologias utilizadas:
 - Python
