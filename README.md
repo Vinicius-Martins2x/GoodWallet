@@ -58,5 +58,8 @@ Demonstração:
 ### Gráfico por categoria
 ![Gráfico por categoria](assets/gastos-categoria.png)
 
+
+Versão: 1.0.0
+
 Autor:
 Vinícius Martins
