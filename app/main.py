@@ -4,7 +4,8 @@ from app.services import (
     calcular_total,
     remover_gasto,
     editar_gasto,
-    filtrar_por_categoria
+    filtrar_por_categoria,
+    filtrar_por_mes
 )
 
 from app.storage import inicializar_arquivo
@@ -18,7 +19,8 @@ def exibir_menu():
     print("4. Remover gasto")
     print("5. Editar gasto")
     print("6. Filtrar por categoria")
-    print("7. Sair")
+    print("7. Filtrar por mês")
+    print("8. Sair")
 
 
 def mostrar_gastos(gastos):
@@ -49,7 +51,9 @@ def main():
 
         # ADICIONAR GASTO
         if opcao == "1":
+
             try:
+
                 valor = float(input("Valor: R$ "))
                 categoria = input("Categoria: ").strip()
                 descricao = input("Descrição: ").strip()
@@ -144,8 +148,19 @@ def main():
 
             mostrar_gastos(gastos_filtrados)
 
-        # SAIR
+        # FILTRAR POR MÊS
         elif opcao == "7":
+
+            mes = input(
+                "Digite o mês (AAAA-MM): "
+            ).strip()
+
+            gastos_filtrados = filtrar_por_mes(mes)
+
+            mostrar_gastos(gastos_filtrados)
+
+        # SAIR
+        elif opcao == "8":
 
             print("Encerrando o GoodWallet.")
 

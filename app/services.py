@@ -60,3 +60,12 @@ def filtrar_por_categoria(categoria):
         gasto for gasto in gastos
         if gasto["categoria"].lower() == categoria.lower()
     ]
+
+
+def filtrar_por_mes(mes):
+    gastos = ler_gastos()
+
+    return [
+        gasto for gasto in gastos
+        if gasto["data"].startswith(mes)
+    ]
