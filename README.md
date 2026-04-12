@@ -2,6 +2,8 @@
 
 Gerenciador de gastos pessoais em Python.
 
+![CI](https://github.com/Vinicius-Martins2x/GoodWallet/actions/workflows/ci.yml/badge.svg)
+
 ## Problema:
 
 Muitas pessoas têm dificuldade em controlar seus gastos mensais de forma simples e organizada. 
