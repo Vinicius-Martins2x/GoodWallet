@@ -65,6 +65,7 @@ Como executar o projeto:
 
 Para executar os testes do projeto:
 - python -m pytest
+
 Para verificar a qualidade do código utilizando Ruff:
 - python -m ruff check .
 
