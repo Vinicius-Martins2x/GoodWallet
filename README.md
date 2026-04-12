@@ -52,7 +52,7 @@ Menu principal
 Lista de gastos
 ![Lista de gastos](assets/listar-gastos.png)
 Gráfico por categoria
-![Gráfico](assets/gastos-por-categoria.png)
+![Gráfico](assets/gastos-categoria.png)
 
 Autor:
 Vinícius Martins
