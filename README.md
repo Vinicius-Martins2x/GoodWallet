@@ -61,10 +61,9 @@ Como executar o projeto:
 3. Instale as dependências - python -m pip install -r requirements.txt
 4. Execute o programa no python app/main.py - python -m app.main
 
-## Testes automatizados
+## Testes automatizados:
 
 Para executar os testes do projeto:
-
 python -m pytest
 
 Demonstração:
