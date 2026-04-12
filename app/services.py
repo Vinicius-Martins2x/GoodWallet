@@ -51,3 +51,12 @@ def editar_gasto(id_gasto, novo_valor, nova_categoria, nova_descricao, nova_data
             return True
 
     return False
+
+
+def filtrar_por_categoria(categoria):
+    gastos = ler_gastos()
+
+    return [
+        gasto for gasto in gastos
+        if gasto["categoria"].lower() == categoria.lower()
+    ]
