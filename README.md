@@ -47,11 +47,8 @@ Como executar o projeto:
 4. Execute o programa no python app/main.py - python -m app.main
 
 Demonstração:
-Menu principal
 ![Menu](assets/menu.png)
-Lista de gastos
 ![Lista de gastos](assets/listar-gastos.png)
-Gráfico por categoria
 ![Gráfico](assets/gastos-categoria.png)
 
 Autor:
