@@ -21,23 +21,30 @@ Funcionalidades:
 
 Tecnologias utilizadas:
 - Python
-- SQLite
+- JSON
 - Git
 - GitHub
+- Matplotlib
 
 Estrutura do Projeto:
 - app/: lógica principal
 - data/: banco de dados
 - docs/: documentação
 - assets/: imagens
-  
+- `app/main.py` → menu principal da aplicação
+- `app/services.py` → lógica do sistema
+- `app/storage.py` → leitura e gravação em JSON
+- `data/gastos.json` → armazenamento dos gastos
+- `data/config.json` → configuração do limite mensal
+
 Necessário para executar o projeto:
 - pip install -r requirements.txt
 
 Como executar o projeto:
 1. Clone o repositório - git clone https://github.com/seu-usuario/GoodWallet.git
 2. Entre na pasta - cd GoodWallet
-3. Execute o programa no python app/main.py
+3. Instale as dependências - python -m pip install -r requirements.txt
+4. Execute o programa no python app/main.py - python -m app.main
 
 Autor:
 Vinícius Martins
