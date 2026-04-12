@@ -10,7 +10,7 @@ Sem um controle adequado, é comum ultrapassar o orçamento e perder a noção d
 Este projeto busca resolver esse problema oferecendo uma aplicação simples em linha de comando para registrar,
 organizar e visualizar despesas pessoais.
 
-## Público-alvo
+## Público-alvo:
 
 Este projeto é voltado para pessoas que desejam controlar seus gastos pessoais de forma simples,
 como estudantes, trabalhadores autônomos ou qualquer pessoa que queira organizar suas despesas mensais.
