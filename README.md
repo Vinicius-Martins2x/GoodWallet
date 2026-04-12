@@ -6,6 +6,11 @@ Funcionalidades:
 - Classificação por categoria
 - Listagem de despesas
 - Controle de gastos mensais
+- Edição e remoção de gastos
+- Filtro por categoria
+- Filtro por mês
+- Definição de limite mensal
+- Gráfico de gastos por categoria
 
 Tecnologias utilizadas:
 - Python
@@ -18,6 +23,9 @@ Estrutura do Projeto:
 - data/: banco de dados
 - docs/: documentação
 - assets/: imagens
+  
+Necessário para executar o projeto:
+- pip install -r requirements.txt
 
 Como executar o projeto:
 1. Clone o repositório - git clone https://github.com/seu-usuario/GoodWallet.git
