@@ -56,7 +56,7 @@ Necessário para executar o projeto:
 - pip install -r requirements.txt
 
 Como executar o projeto:
-1. Clone o repositório - git clone https://github.com/seu-usuario/GoodWallet.git
+1. Clone o repositório - git clone https://github.com/Vinicius-Martins2x/GoodWallet.git
 2. Entre na pasta - cd GoodWallet
 3. Instale as dependências - python -m pip install -r requirements.txt
 4. Execute o programa no python app/main.py - python -m app.main
