@@ -30,12 +30,12 @@ def remover_gasto(id_gasto):
 
     gastos_filtrados = [gasto for gasto in gastos if gasto["id"] != id_gasto]
 
-    # verifica se o ID existia
     if len(gastos) == len(gastos_filtrados):
         return False
 
     salvar_gastos(gastos_filtrados)
     return True
+
 
 def editar_gasto(id_gasto, novo_valor, nova_categoria, nova_descricao, nova_data):
     gastos = ler_gastos()
@@ -51,5 +51,3 @@ def editar_gasto(id_gasto, novo_valor, nova_categoria, nova_descricao, nova_data
             return True
 
     return False
-
-   

@@ -1,4 +1,11 @@
-from app.services import adicionar_gasto, listar_gastos, calcular_total, remover_gasto, editar_gasto
+from app.services import (
+    adicionar_gasto,
+    listar_gastos,
+    calcular_total,
+    remover_gasto,
+    editar_gasto
+)
+
 from app.storage import inicializar_arquivo
 
 
@@ -11,6 +18,7 @@ def exibir_menu():
     print("5. Editar gasto")
     print("6. Sair")
 
+
 def main():
     inicializar_arquivo()
 
@@ -18,6 +26,7 @@ def main():
         exibir_menu()
         opcao = input("Escolha uma opção: ")
 
+        # ADICIONAR GASTO
         if opcao == "1":
             try:
                 valor = float(input("Valor: R$ "))
@@ -35,6 +44,7 @@ def main():
             except ValueError:
                 print("Valor inválido. Digite um número válido.")
 
+        # LISTAR GASTOS
         elif opcao == "2":
             gastos = listar_gastos()
 
@@ -51,10 +61,12 @@ def main():
                         f'Data: {gasto["data"]}'
                     )
 
+        # TOTAL GASTO
         elif opcao == "3":
             total = calcular_total()
             print(f"Total gasto: R$ {total:.2f}")
 
+        # REMOVER GASTO
         elif opcao == "4":
             try:
                 id_gasto = int(input("Digite o ID do gasto que deseja remover: "))
@@ -68,31 +80,44 @@ def main():
             except ValueError:
                 print("Digite um ID válido.")
 
+        # EDITAR GASTO
         elif opcao == "5":
-    try:
-        id_gasto = int(input("Digite o ID do gasto que deseja editar: "))
-        novo_valor = float(input("Novo valor: R$ "))
-        nova_categoria = input("Nova categoria: ").strip()
-        nova_descricao = input("Nova descrição: ").strip()
-        nova_data = input("Nova data (AAAA-MM-DD): ").strip()
+            try:
+                id_gasto = int(input("Digite o ID do gasto que deseja editar: "))
 
-        if novo_valor <= 0:
-            print("O valor deve ser maior que zero.")
-            continue
+                novo_valor = float(input("Novo valor: R$ "))
+                nova_categoria = input("Nova categoria: ").strip()
+                nova_descricao = input("Nova descrição: ").strip()
+                nova_data = input("Nova data (AAAA-MM-DD): ").strip()
 
-        editado = editar_gasto(id_gasto, novo_valor, nova_categoria, nova_descricao, nova_data)
+                if novo_valor <= 0:
+                    print("O valor deve ser maior que zero.")
+                    continue
 
-        if editado:
-            print("Gasto editado com sucesso.")
-        else:
-            print("ID não encontrado.")
+                editado = editar_gasto(
+                    id_gasto,
+                    novo_valor,
+                    nova_categoria,
+                    nova_descricao,
+                    nova_data
+                )
 
-    except ValueError:
-        print("Dados inválidos.")
+                if editado:
+                    print("Gasto editado com sucesso.")
+                else:
+                    print("ID não encontrado.")
 
+            except ValueError:
+                print("Dados inválidos.")
+
+        # SAIR
         elif opcao == "6":
             print("Encerrando o GoodWallet.")
-    break
-    
+            break
+
+        else:
+            print("Opção inválida.")
+
+
 if __name__ == "__main__":
     main()
