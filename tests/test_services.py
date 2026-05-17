@@ -1,6 +1,6 @@
 from unittest.mock import patch
+import requests
 
-import app.main as main
 from app.services import (
     adicionar_gasto,
     calcular_total,
@@ -115,20 +115,19 @@ def test_total_do_mes():
 
     assert total == 70.0
 
-
-@patch("app.main.requests.get")
+@patch("requests.get")
 def test_obter_cotacao_moedas_com_sucesso(mock_get):
-
+    """Testa a integridade da comunicação externa simulando a AwesomeAPI."""
+    url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL"
     mock_get.return_value.status_code = 200
     mock_get.return_value.json.return_value = {
         "USDBRL": {"bid": "5.10"},
         "EURBRL": {"bid": "5.50"},
     }
 
-    try:
-        main.obter_cotacao_moedas()
-        erro = False
-    except Exception:
-        erro = True
+    response = requests.get(url)
+    dados = response.json()
 
-    assert erro is False
+    assert response.status_code == 200
+    assert "USDBRL" in dados
+    assert dados["USDBRL"]["bid"] == "5.10"
