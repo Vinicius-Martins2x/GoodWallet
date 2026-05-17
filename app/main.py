@@ -1,3 +1,4 @@
+import requests
 from app.services import (
     adicionar_gasto,
     calcular_total,
@@ -26,7 +27,28 @@ def exibir_menu():
     print("8. Definir limite mensal")
     print("9. Verificar limite do mês")
     print("10. Mostrar gráfico por categoria")
-    print("11. Sair")
+    print("11. Consultar cotação do Dólar/Euro (API Externa)")
+    print("12. Sair")
+
+
+def obter_cotacao_moedas():
+    """Busca a cotação atual do USD e EUR para BRL usando a AwesomeAPI."""
+    url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        dados = response.json()
+        
+        dolar = float(dados['USDBRL']['bid'])
+        euro = float(dados['EURBRL']['bid'])
+        
+        print("\n--- Cotações do Dia ---")
+        print(f"Dólar (USD): R$ {dolar:.2f}")
+        print(f"Euro (EUR): R$ {euro:.2f}")
+        print("-----------------------")
+        
+    except requests.exceptions.RequestException:
+        print("\nErro ao buscar cotações de moedas. Verifique sua conexão com a internet.")
 
 
 def mostrar_gastos(gastos):
@@ -161,7 +183,10 @@ def main():
         elif opcao == "10":
             grafico_por_categoria()
 
-        elif opcao == "11":
+        elif opcao == "11":  
+            obter_cotacao_moedas()
+
+        elif opcao == "12":  
             print("Encerrando o GoodWallet.")
             break
 
