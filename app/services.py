@@ -11,7 +11,7 @@ def adicionar_gasto(valor, categoria, descricao, data):
         "valor": valor,
         "categoria": categoria,
         "descricao": descricao,
-        "data": data
+        "data": data,
     }
 
     gastos.append(novo_gasto)
@@ -30,10 +30,7 @@ def calcular_total():
 def remover_gasto(id_gasto):
     gastos = ler_gastos()
 
-    gastos_filtrados = [
-        gasto for gasto in gastos
-        if gasto["id"] != id_gasto
-    ]
+    gastos_filtrados = [gasto for gasto in gastos if gasto["id"] != id_gasto]
 
     if len(gastos) == len(gastos_filtrados):
         return False
@@ -62,18 +59,14 @@ def filtrar_por_categoria(categoria):
     gastos = ler_gastos()
 
     return [
-        gasto for gasto in gastos
-        if gasto["categoria"].lower() == categoria.lower()
+        gasto for gasto in gastos if gasto["categoria"].lower() == categoria.lower()
     ]
 
 
 def filtrar_por_mes(mes):
     gastos = ler_gastos()
 
-    return [
-        gasto for gasto in gastos
-        if gasto["data"].startswith(mes)
-    ]
+    return [gasto for gasto in gastos if gasto["data"].startswith(mes)]
 
 
 def definir_limite_mensal(limite):
@@ -90,11 +83,7 @@ def obter_limite_mensal():
 def total_do_mes(mes):
     gastos = ler_gastos()
 
-    return sum(
-        gasto["valor"]
-        for gasto in gastos
-        if gasto["data"].startswith(mes)
-    )
+    return sum(gasto["valor"] for gasto in gastos if gasto["data"].startswith(mes))
 
 
 def grafico_por_categoria():
