@@ -1,4 +1,5 @@
 from unittest.mock import patch
+
 import requests
 
 from app.services import (
@@ -114,6 +115,7 @@ def test_total_do_mes():
     total = total_do_mes("2026-04")
 
     assert total == 70.0
+
 
 @patch("requests.get")
 def test_obter_cotacao_moedas_com_sucesso(mock_get):
