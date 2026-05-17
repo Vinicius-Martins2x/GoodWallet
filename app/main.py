@@ -1,4 +1,5 @@
 import requests
+
 from app.services import (
     adicionar_gasto,
     calcular_total,
@@ -38,17 +39,19 @@ def obter_cotacao_moedas():
         response = requests.get(url)
         response.raise_for_status()
         dados = response.json()
-        
-        dolar = float(dados['USDBRL']['bid'])
-        euro = float(dados['EURBRL']['bid'])
-        
+
+        dolar = float(dados["USDBRL"]["bid"])
+        euro = float(dados["EURBRL"]["bid"])
+
         print("\n--- Cotações do Dia ---")
         print(f"Dólar (USD): R$ {dolar:.2f}")
         print(f"Euro (EUR): R$ {euro:.2f}")
         print("-----------------------")
-        
+
     except requests.exceptions.RequestException:
-        print("\nErro ao buscar cotações de moedas. Verifique sua conexão com a internet.")
+        print(
+            "\nErro ao buscar cotações de moedas. Verifique sua conexão com a internet."
+        )
 
 
 def mostrar_gastos(gastos):
@@ -60,11 +63,11 @@ def mostrar_gastos(gastos):
 
     for gasto in gastos:
         print(
-            f'ID: {gasto["id"]} | '
-            f'Valor: R$ {gasto["valor"]:.2f} | '
-            f'Categoria: {gasto["categoria"]} | '
-            f'Descrição: {gasto["descricao"]} | '
-            f'Data: {gasto["data"]}'
+            f"ID: {gasto['id']} | "
+            f"Valor: R$ {gasto['valor']:.2f} | "
+            f"Categoria: {gasto['categoria']} | "
+            f"Descrição: {gasto['descricao']} | "
+            f"Data: {gasto['data']}"
         )
 
 
@@ -126,11 +129,7 @@ def main():
                     continue
 
                 editado = editar_gasto(
-                    id_gasto,
-                    novo_valor,
-                    nova_categoria,
-                    nova_descricao,
-                    nova_data
+                    id_gasto, novo_valor, nova_categoria, nova_descricao, nova_data
                 )
 
                 if editado:
@@ -183,10 +182,10 @@ def main():
         elif opcao == "10":
             grafico_por_categoria()
 
-        elif opcao == "11":  
+        elif opcao == "11":
             obter_cotacao_moedas()
 
-        elif opcao == "12":  
+        elif opcao == "12":
             print("Encerrando o GoodWallet.")
             break
 
