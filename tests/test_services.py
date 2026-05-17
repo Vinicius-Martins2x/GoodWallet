@@ -11,7 +11,8 @@ from app.services import (
     total_do_mes,
 )
 from app.storage import salvar_config, salvar_gastos
-
+from unittest.mock import patch
+from app.main import obter_cotacao_moedas
 
 def setup_function():
     salvar_gastos([])
@@ -109,3 +110,20 @@ def test_total_do_mes():
 
     assert total == 70.0
 
+@patch('app.main.requests.get')
+def test_obter_cotacao_moedas_com_sucesso(mock_get):
+    """Testa se a função de cotação consome a API corretamente sem quebrar."""
+    
+    mock_get.return_value.status_code = 200
+    mock_get.return_value.json.return_value = {
+        'USDBRL': {'bid': '5.10'},
+        'EURBRL': {'bid': '5.50'}
+    }
+    
+    try:
+        obter_cotacao_moedas()
+        erro = False
+    except Exception:
+        erro = True
+        
+    assert erro is False
