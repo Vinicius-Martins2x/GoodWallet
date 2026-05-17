@@ -20,6 +20,9 @@ como estudantes, trabalhadores autônomos ou qualquer pessoa que queira organiza
 Descrição:
 - Aplicação em Python para gerenciamento de gastos pessoais, permitindo cadastrar, editar, remover, filtrar e visualizar despesas de forma simples.
 
+Novidade: Cotação de Moedas
+- O GoodWallet agora conta com integração em tempo real com a AwesomeAPI de economia. Ao abrir o programa, você visualizará a cotação atual do Dólar e do Euro para auxiliar no seu controle de gastos internacionais.
+
 Funcionalidades:
 - Cadastro de gastos
 - Classificação por categoria
